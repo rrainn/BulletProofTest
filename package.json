@@ -1,6 +1,6 @@
 {
   "name": "bulletprooftest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,7 +8,11 @@
   "bin": {
     "bulletprooftest": "index.js"
   },
-  "keywords": ["test", "terminal", "command"],
+  "keywords": [
+    "test",
+    "terminal",
+    "command"
+  ],
   "author": "rrainn, Inc.",
   "license": "MIT",
   "repository": {
