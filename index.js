@@ -14,7 +14,7 @@ if (!totalTimesToRun || !command) {
 function onDone(exitCodes) {
 	if (exitCodes > 0) {
 		// test failed
-		compelete("Failed");
+		complete("Failed");
 	} else {
 		// test succeeded
 		checkRunTest();
@@ -29,7 +29,7 @@ function onError(data) {
 
 function checkRunTest() {
 	if (timesRan >= totalTimesToRun) {
-		compelete("Success");
+		complete("Success");
 	} else {
 		runTest();
 	}
