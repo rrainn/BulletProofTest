@@ -8,7 +8,7 @@
   "bin": {
     "bulletprooftest": "index.js"
   },
-  "keywords": [],
+  "keywords": ["test", "terminal", "command"],
   "author": "rrainn, Inc.",
   "license": "MIT",
   "repository": {
