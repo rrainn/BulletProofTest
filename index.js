@@ -3,7 +3,7 @@ const argv = require('minimist')(process.argv);
 
 let timesRan = 0;
 let totalTimesToRun = argv.times;
-let command = argv.command;
+let command = argv.command || argv.cmd;
 
 if (!totalTimesToRun || !command) {
 	return console.log("Please ensure you have defined times and command.");
