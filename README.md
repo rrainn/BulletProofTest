@@ -1,4 +1,4 @@
-# BulletProofTest [![NPM version](https://badge.fury.io/js/BulletProofTest.svg)](http://badge.fury.io/js/BulletProofTest) [![Known Vulnerabilities](https://snyk.io/test/github/rrainn/BulletProofTest/badge.svg)](https://snyk.io/test/github/rrainn/BulletProofTest) [![Dependencies](https://david-dm.org/rrainn/BulletProofTest.svg)](https://david-dm.org/rrainn/BulletProofTest) [![Dev Dependencies](https://david-dm.org/rrainn/BulletProofTest/dev-status.svg)](https://david-dm.org/rrainn/BulletProofTest?type=dev)
+# BulletProofTest [![NPM version](https://badge.fury.io/js/bulletprooftest.svg)](http://badge.fury.io/js/bulletprooftest) [![Known Vulnerabilities](https://snyk.io/test/github/rrainn/BulletProofTest/badge.svg)](https://snyk.io/test/github/rrainn/BulletProofTest) [![Dependencies](https://david-dm.org/rrainn/BulletProofTest.svg)](https://david-dm.org/rrainn/BulletProofTest) [![Dev Dependencies](https://david-dm.org/rrainn/BulletProofTest/dev-status.svg)](https://david-dm.org/rrainn/BulletProofTest?type=dev)
 
 ## Description
 
@@ -6,7 +6,7 @@ BulletProofTest is a package that allows you to easily test a terminal command m
 
 ## Install
 
-`npm install --save BulletProofTest`
+`npm install --save bulletprooftest`
 
 ## Usage
 
