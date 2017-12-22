@@ -5,6 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "bulletprooftest": "index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,5 +19,9 @@
     "url": "https://github.com/rrainn/BulletProofTest/issues"
   },
   "homepage": "https://github.com/rrainn/BulletProofTest#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "node-run-cmd": "^1.0.1"
+  }
 }
