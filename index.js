@@ -3,6 +3,7 @@
 const terminal = require('node-run-cmd');
 const prettyMs = require('pretty-ms');
 const argv = require('minimist')(process.argv);
+const chalk = require('chalk');
 
 let timesRan = 0;
 let totalTimesToRun = argv.times;
@@ -55,9 +56,9 @@ function complete(status) {
 	console.log("Min time took: " + prettyMs(Math.min.apply(Math, timeTook)));
 
 	if (status == "Success") {
-		console.log("Completed " + totalTimesToRun + " times with no errors");
+		console.log(chalk.bold.green("Completed " + totalTimesToRun + " times with no errors"));
 	} else {
-		console.log("Test failed on attempt: " + timesRan + " of " + totalTimesToRun);
+		console.log(chalk.bold.red("Test failed on attempt: " + timesRan + " of " + totalTimesToRun));
 	}
 }
 

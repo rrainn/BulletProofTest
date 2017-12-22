@@ -25,6 +25,7 @@
   "homepage": "https://github.com/rrainn/BulletProofTest#readme",
   "description": "BulletProofTest is a package that allows you to easily test a terminal command multiple times. Once complete or on failure the process will exit.",
   "dependencies": {
+    "chalk": "^2.3.0",
     "minimist": "^1.2.0",
     "node-run-cmd": "^1.0.1",
     "pretty-ms": "^3.1.0"
