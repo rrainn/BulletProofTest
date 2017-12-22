@@ -45,7 +45,7 @@ function runTest() {
 
 function complete(status) {
 	if (status == "Success") {
-		console.log("Completed with no errors");
+		console.log("Completed " + totalTimesToRun + " times with no errors");
 	} else {
 		console.log("Test failed on attempt: " + timesRan + " of " + totalTimesToRun);
 	}
