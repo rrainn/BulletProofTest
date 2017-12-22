@@ -1,4 +1,4 @@
-# BulletProofTest [![NPM version](https://badge.fury.io/js/scriptutils.svg)](http://badge.fury.io/js/scriptutils) [![Known Vulnerabilities](https://snyk.io/test/github/rrainn/scriptutils/badge.svg)](https://snyk.io/test/github/rrainn/scriptutils) [![Dependencies](https://david-dm.org/rrainn/scriptutils.svg)](https://david-dm.org/rrainn/scriptutils) [![Dev Dependencies](https://david-dm.org/rrainn/scriptutils/dev-status.svg)](https://david-dm.org/rrainn/scriptutils?type=dev)
+# BulletProofTest [![NPM version](https://badge.fury.io/js/BulletProofTest.svg)](http://badge.fury.io/js/BulletProofTest) [![Known Vulnerabilities](https://snyk.io/test/github/rrainn/BulletProofTest/badge.svg)](https://snyk.io/test/github/rrainn/BulletProofTest) [![Dependencies](https://david-dm.org/rrainn/BulletProofTest.svg)](https://david-dm.org/rrainn/BulletProofTest) [![Dev Dependencies](https://david-dm.org/rrainn/BulletProofTest/dev-status.svg)](https://david-dm.org/rrainn/BulletProofTest?type=dev)
 
 ## Description
 

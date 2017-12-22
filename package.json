@@ -9,8 +9,8 @@
     "bulletprooftest": "index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "rrainn, Inc.",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rrainn/BulletProofTest.git"
