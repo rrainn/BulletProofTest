@@ -14,7 +14,7 @@ if (!totalTimesToRun || !command) {
 function onDone(exitCodes) {
 	if (exitCodes > 0) {
 		// test failed
-		console.log("Test failed on attempt: " + timesRan);
+		compelete("Failed");
 	} else {
 		// test succeeded
 		checkRunTest();
@@ -29,7 +29,7 @@ function onError(data) {
 
 function checkRunTest() {
 	if (timesRan >= totalTimesToRun) {
-		console.log("Completed with no errors");
+		compelete("Success");
 	} else {
 		runTest();
 	}
@@ -41,6 +41,14 @@ function runTest() {
 		onData: onData,
 		onError: onError
 	});
+}
+
+function complete(status) {
+	if (status == "Success") {
+		console.log("Completed with no errors");
+	} else {
+		console.log("Test failed on attempt: " + timesRan);
+	}
 }
 
 checkRunTest();
