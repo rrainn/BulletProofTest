@@ -21,10 +21,10 @@ function onDone(exitCodes) {
 	}
 }
 function onData(data) {
-	console.log("" + data);
+	process.stdout.write(data);
 }
 function onError(data) {
-	console.log("" + data);
+	process.stdout.write(data);
 }
 
 function checkRunTest() {
