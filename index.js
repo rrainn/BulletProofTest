@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+'use strict';
 const terminal = require('node-run-cmd');
 const argv = require('minimist')(process.argv);
 
