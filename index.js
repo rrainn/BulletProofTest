@@ -1,9 +1,13 @@
 const terminal = require('node-run-cmd');
-const argv = require('minimist')(process.argv.slice(2));
+const argv = require('minimist')(process.argv);
 
 let timesRan = 0;
 let totalTimesToRun = argv.times;
 let command = argv.command;
+
+if (!totalTimesToRun || !command) {
+	return console.log("Please ensure you have defined times and command.");
+}
 
 function onDone(exitCodes) {
 	if (exitCodes > 0) {
