@@ -1,17 +1,21 @@
 #!/usr/bin/env node
 'use strict';
 const terminal = require('node-run-cmd');
+const prettyMs = require('pretty-ms');
 const argv = require('minimist')(process.argv);
 
 let timesRan = 0;
 let totalTimesToRun = argv.times;
 let command = argv.command || argv.cmd;
+let timeTook = [];
+let startTime = 0;
 
 if (!totalTimesToRun || !command) {
 	return console.log("Please ensure you have defined times and command.");
 }
 
 function onDone(exitCodes) {
+	timeTook.push(Date.now() - startTime);
 	if (exitCodes > 0) {
 		// test failed
 		complete("Failed");
@@ -35,6 +39,7 @@ function checkRunTest() {
 	}
 }
 function runTest() {
+	startTime = Date.now();
 	timesRan++;
 	terminal.run(command, {
 		onDone: onDone,
@@ -44,6 +49,11 @@ function runTest() {
 }
 
 function complete(status) {
+	console.log("Total time took: " + prettyMs(timeTook.reduce((total, time) => total + time, 0)));
+	console.log("Average time took: " + prettyMs(timeTook.reduce((total, time) => total + time, 0)/totalTimesToRun));
+	console.log("Max time took: " + prettyMs(Math.max.apply(Math, timeTook)));
+	console.log("Min time took: " + prettyMs(Math.min.apply(Math, timeTook)));
+
 	if (status == "Success") {
 		console.log("Completed " + totalTimesToRun + " times with no errors");
 	} else {
