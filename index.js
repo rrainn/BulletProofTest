@@ -51,15 +51,32 @@ function runTest() {
 
 function complete(status) {
 	console.log("Total time took: " + prettyMs(timeTook.reduce((total, time) => total + time, 0)));
-	console.log("Average time took: " + prettyMs(timeTook.reduce((total, time) => total + time, 0)/totalTimesToRun));
+	console.log("Average time took: " + prettyMs(timeTook.reduce((total, time) => total + time, 0)/timesRan));
 	console.log("Max time took: " + prettyMs(Math.max.apply(Math, timeTook)));
 	console.log("Min time took: " + prettyMs(Math.min.apply(Math, timeTook)));
 
 	if (status == "Success") {
 		console.log(chalk.bold.green("Completed " + totalTimesToRun + " times with no errors"));
-	} else {
+	} else if (status == "Failed") {
 		console.log(chalk.bold.red("Test failed on attempt: " + timesRan + " of " + totalTimesToRun));
+	} else {
+		console.log(chalk.bold.blue("Cancelled. Finished " + timesRan + " of " + totalTimesToRun + " with no errors"));
 	}
+	process.exit();
 }
 
 checkRunTest();
+
+
+//catches ctrl+c event
+process.on('SIGINT', exitEarly);
+
+// catches "kill pid" (for example: nodemon restart)
+process.on('SIGUSR1', exitEarly);
+process.on('SIGUSR2', exitEarly);
+
+function exitEarly() {
+	timesRan--; // current test is not complete
+	complete("Quit");
+	
+}
