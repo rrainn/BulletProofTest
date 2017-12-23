@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-const terminal = require('node-run-cmd');
+const terminal = require('node-cmd');
+let currentCommand;
 const prettyMs = require('pretty-ms');
 const argv = require('minimist')(process.argv);
 const chalk = require('chalk');
@@ -42,11 +43,10 @@ function checkRunTest() {
 function runTest() {
 	startTime = Date.now();
 	timesRan++;
-	terminal.run(command, {
-		onDone: onDone,
-		onData: onData,
-		onError: onError
-	});
+	currentCommand = terminal.get(command);
+	currentCommand.on('exit', onDone);
+	currentCommand.stdout.on('data', onData);
+	currentCommand.stderr.on('data', onError);
 }
 
 function complete(status) {
