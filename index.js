@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 'use strict';
-const terminal = require('node-cmd');
+const terminal = require('child_process');
 let currentCommand;
 const prettyMs = require('pretty-ms');
 const argv = require('minimist')(process.argv);
 const chalk = require('chalk');
+const scriptutils = require('scriptutils');
 
 let timesRan = 0;
 let totalTimesToRun = argv.times;
@@ -43,10 +44,10 @@ function checkRunTest() {
 function runTest() {
 	startTime = Date.now();
 	timesRan++;
-	currentCommand = terminal.get(command);
+	currentCommand = terminal.spawn(command.split(" ")[0], command.split(" ").remove(0), { stdio: "inherit" });
 	currentCommand.on('exit', onDone);
-	currentCommand.stdout.on('data', onData);
-	currentCommand.stderr.on('data', onError);
+	// currentCommand.stdout.on('data', onData);
+	// currentCommand.stderr.on('data', onError);
 }
 
 function complete(status) {
